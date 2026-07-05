@@ -19,3 +19,15 @@ description='''${mod_description}'''
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="arphex"
+    mandatory=true
+    versionRange="[5.0,)"
+    ordering="AFTER"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="biomesoplenty"
+    mandatory=true
+    versionRange="[18.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
