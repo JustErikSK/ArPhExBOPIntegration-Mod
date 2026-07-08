@@ -31,9 +31,13 @@ minecraft {
         }
         client {
             property 'forge.enabledGameTestNamespaces', mod_id
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
         }
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             args '--nogui'
         }
         gameTestServer {
@@ -49,10 +53,19 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        name = "CurseMaven"
+        url = "https://cursemaven.com"
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    runtimeOnly fg.deobf("curse.maven:arphex-967672:7466434")
+    runtimeOnly fg.deobf("curse.maven:geckolib-388172:7017796")
+    runtimeOnly fg.deobf("curse.maven:biomesoplenty-220318:4617259")
+    runtimeOnly fg.deobf("curse.maven:terrablender-563928:5008700")
 }
 
 tasks.named('processResources', ProcessResources).configure {
