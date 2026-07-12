@@ -2,65 +2,68 @@ package net.withrage.arphexbopintegration.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ArphexBopConfig {
     public static final ForgeConfigSpec SPEC;
 
-    public static final ForgeConfigSpec.BooleanValue ENABLE_BOP_INTEGRATION;
-    public static final ForgeConfigSpec.BooleanValue USE_ARPHEX_SPAWNRATE_MULTIPLIER;
-    public static final ForgeConfigSpec.BooleanValue LOG_MISSING_BIOMES;
+    public static final ForgeConfigSpec.BooleanValue ENABLE_INTEGRATION;
 
-    public static final MobSpawnConfig SPIDER_SNATCHER;
-    public static final MobSpawnConfig JUMPING_SPIDER;
+    public static final Map<String, MobSpawnConfig> MOB_CONFIGS =
+            new LinkedHashMap<>();
 
     static {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
         builder.push("General");
 
-        ENABLE_BOP_INTEGRATION = builder
-                .comment("Enable ArPhEx Biomes O' Plenty spawn integration.")
-                .define("Enable BOP Integration", true);
+        ENABLE_INTEGRATION = builder
+                .comment("Enables all configured ArPhEx biome spawns.")
+                .define("Enable Integration", true);
 
-        USE_ARPHEX_SPAWNRATE_MULTIPLIER = builder
-                .comment("If true, this addon will attempt to scale spawn weights using ArPhEx's global biome-specific spawnrate config.")
-                .define("Use ArPhEx Global Spawnrate Multiplier", true);
+        builder.pop();
 
-        LOG_MISSING_BIOMES = builder
-                .comment("Logs warnings when a configured biome ID does not exist.")
-                .define("Log Missing Biomes", true);
+        builder.push("Mob Specific Spawns");
+
+        addMob(
+                builder,
+                "spider_snatcher",
+                List.of(
+                        "biomesoplenty:ominous_woods"
+                ),
+                32
+        );
+
+        addMob(
+                builder,
+                "spider_jump",
+                List.of(
+                        "biomesoplenty:rainforest"
+                ),
+                8
+        );
 
         builder.pop();
 
         SPEC = builder.build();
+    }
 
-        builder.push("MobSpecificSpawns");
-
-        SPIDER_SNATCHER = new MobSpawnConfig(
-                builder,
-                "spider_snatcher",
-                List.of(
-                        "biomesoplenty:rainforest",
-                        "biomesoplenty:ominous_woods"
-                ),
-                10,
-                1,
-                1
+    private static void addMob(
+            ForgeConfigSpec.Builder builder,
+            String mobId,
+            List<String> defaultBiomes,
+            int defaultWeight
+    ) {
+        MOB_CONFIGS.put(
+                mobId,
+                new MobSpawnConfig(
+                        builder,
+                        mobId,
+                        defaultBiomes,
+                        defaultWeight
+                )
         );
-
-        JUMPING_SPIDER = new MobSpawnConfig(
-                builder,
-                "jumping_spider",
-                List.of(
-                        "biomesoplenty:rainforest",
-                        "biomesoplenty:ominous_woods"
-                ),
-                10,
-                1,
-                1
-        );
-
-        builder.pop();
     }
 }

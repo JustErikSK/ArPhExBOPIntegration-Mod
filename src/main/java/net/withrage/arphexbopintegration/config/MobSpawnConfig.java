@@ -8,41 +8,36 @@ public class MobSpawnConfig {
     public final ForgeConfigSpec.BooleanValue enabled;
     public final ForgeConfigSpec.ConfigValue<List<? extends String>> allowedBiomes;
     public final ForgeConfigSpec.IntValue spawnWeight;
-    public final ForgeConfigSpec.IntValue minCount;
-    public final ForgeConfigSpec.IntValue maxCount;
 
-    public MobSpawnConfig(ForgeConfigSpec.Builder builder,
-                          String mobId,
-                          List<String> defaultBiomes,
-                          int defaultWeight,
-                          int defaultMin,
-                          int defaultMax) {
-
-        builder.push(mobId);
+    public MobSpawnConfig(
+            ForgeConfigSpec.Builder builder,
+            String sectionName,
+            List<String> defaultBiomes,
+            int defaultWeight
+    ) {
+        builder.push(sectionName);
 
         enabled = builder
-                .comment("Enable biome-specific spawning for this mob.")
+                .comment("Whether biome-specific spawning is enabled for this mob.")
                 .define("Enabled", true);
 
         allowedBiomes = builder
-                .comment("List of biome IDs where this mob can spawn.")
+                .comment(
+                        "Biome IDs where this mob may spawn.",
+                        "Biome IDs from other mods may also be used."
+                )
                 .defineListAllowEmpty(
                         List.of("Allowed Biomes"),
                         defaultBiomes,
-                        obj -> obj instanceof String
+                        value -> value instanceof String
                 );
 
         spawnWeight = builder
-                .comment("Spawn weight.")
-                .defineInRange("Spawn Weight", defaultWeight, 1, Integer.MAX_VALUE);
-
-        minCount = builder
-                .comment("Minimum group size.")
-                .defineInRange("Min Count", defaultMin, 1, Integer.MAX_VALUE);
-
-        maxCount = builder
-                .comment("Maximum group size.")
-                .defineInRange("Max Count", defaultMax, 1, Integer.MAX_VALUE);
+                .comment(
+                        "The mob's spawn weight.",
+                        "Higher values make the mob more common relative to other mobs."
+                )
+                .defineInRange("Spawn Weight", defaultWeight, 1, 1000);
 
         builder.pop();
     }
