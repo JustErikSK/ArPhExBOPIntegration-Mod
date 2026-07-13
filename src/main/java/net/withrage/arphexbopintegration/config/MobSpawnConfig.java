@@ -37,7 +37,7 @@ public class MobSpawnConfig {
                         "The mob's spawn weight.",
                         "Higher values make the mob more common relative to other mobs."
                 )
-                .defineInRange("Spawn Weight", defaultWeight, 1, 1000);
+                .defineInRange("Spawn Weight", defaultWeight, 1, 100);
 
         builder.pop();
     }

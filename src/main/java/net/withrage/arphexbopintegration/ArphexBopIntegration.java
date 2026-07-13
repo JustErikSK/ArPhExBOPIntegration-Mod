@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 
 @Mod(ArphexBopIntegration.MOD_ID)
 public class ArphexBopIntegration {
-    public static final String MOD_ID = "arphex_bop_integration";
+    public static final String MOD_ID = "arphexbopintegration";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public ArphexBopIntegration() {
