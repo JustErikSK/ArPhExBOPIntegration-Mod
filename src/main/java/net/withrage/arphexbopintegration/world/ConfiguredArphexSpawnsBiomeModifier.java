@@ -68,13 +68,6 @@ public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
                 continue;
             }
 
-            ArphexBopIntegration.LOGGER.info(
-                    "Adding entity {} to biome {} with weight {}",
-                    entityId,
-                    biomeId,
-                    config.spawnWeight.get()
-            );
-
             builder.getMobSpawnSettings().addSpawn(
                     MobCategory.MONSTER,
                     new MobSpawnSettings.SpawnerData(
