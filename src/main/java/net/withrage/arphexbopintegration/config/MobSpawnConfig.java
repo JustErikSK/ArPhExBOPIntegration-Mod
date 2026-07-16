@@ -8,12 +8,16 @@ public class MobSpawnConfig {
     public final ForgeConfigSpec.BooleanValue enabled;
     public final ForgeConfigSpec.ConfigValue<List<? extends String>> allowedBiomes;
     public final ForgeConfigSpec.IntValue spawnWeight;
+    public final ForgeConfigSpec.IntValue minCount;
+    public final ForgeConfigSpec.IntValue maxCount;
 
     public MobSpawnConfig(
             ForgeConfigSpec.Builder builder,
             String sectionName,
             List<String> defaultBiomes,
-            int defaultWeight
+            int defaultWeight,
+            int defaultMinCount,
+            int defaultMaxCount
     ) {
         builder.push(sectionName);
 
@@ -38,6 +42,14 @@ public class MobSpawnConfig {
                         "Higher values make the mob more common relative to other mobs."
                 )
                 .defineInRange("Spawn Weight", defaultWeight, 1, 1000);
+
+        minCount = builder
+                .comment("Minimum group size.")
+                .defineInRange("Min Count", defaultMinCount, 1, 100);
+
+        maxCount = builder
+                .comment("Maximum group size.")
+                .defineInRange("Max Count", defaultMaxCount, 1, 100);
 
         builder.pop();
     }

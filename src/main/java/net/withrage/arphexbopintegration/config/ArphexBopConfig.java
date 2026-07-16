@@ -33,7 +33,9 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:ominous_woods"
                 ),
-                32
+                32,
+                1,
+                1
         );
 
         addMob(
@@ -42,7 +44,9 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:rainforest"
                 ),
-                8
+                8,
+                1,
+                1
         );
 
         builder.pop();
@@ -54,7 +58,9 @@ public class ArphexBopConfig {
             ForgeConfigSpec.Builder builder,
             String mobId,
             List<String> defaultBiomes,
-            int defaultWeight
+            int defaultWeight,
+            int defaultMinCount,
+            int defaultMaxCount
     ) {
         MOB_CONFIGS.put(
                 mobId,
@@ -62,7 +68,9 @@ public class ArphexBopConfig {
                         builder,
                         mobId,
                         defaultBiomes,
-                        defaultWeight
+                        defaultWeight,
+                        defaultMinCount,
+                        defaultMaxCount
                 )
         );
     }
