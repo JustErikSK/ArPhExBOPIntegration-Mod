@@ -11,12 +11,15 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.withrage.arphexbopintegration.ArphexBopIntegration;
-import net.withrage.arphexbopintegration.config.OverworldSpawnConfig;
 import net.withrage.arphexbopintegration.config.MobSpawnConfig;
+import net.withrage.arphexbopintegration.config.NetherSpawnConfig;
+import net.withrage.arphexbopintegration.config.OverworldSpawnConfig;
 
 import java.util.List;
+import java.util.Map;
 
 public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
+
     public static final Codec<ConfiguredArphexSpawnsBiomeModifier> CODEC =
             Codec.unit(ConfiguredArphexSpawnsBiomeModifier::new);
 
@@ -30,10 +33,6 @@ public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
             return;
         }
 
-        if (!OverworldSpawnConfig.ENABLE_INTEGRATION.get()) {
-            return;
-        }
-
         ResourceLocation biomeId = biome.unwrapKey()
                 .map(key -> key.location())
                 .orElse(null);
@@ -42,7 +41,29 @@ public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
             return;
         }
 
-        for (var entry : OverworldSpawnConfig.MOB_CONFIGS.entrySet()) {
+        if (OverworldSpawnConfig.ENABLE_INTEGRATION.get()) {
+            applySpawnConfigs(
+                    biomeId,
+                    builder,
+                    OverworldSpawnConfig.MOB_CONFIGS
+            );
+        }
+
+        if (NetherSpawnConfig.ENABLE_INTEGRATION.get()) {
+            applySpawnConfigs(
+                    biomeId,
+                    builder,
+                    NetherSpawnConfig.MOB_CONFIGS
+            );
+        }
+    }
+
+    private static void applySpawnConfigs(
+            ResourceLocation biomeId,
+            ModifiableBiomeInfo.BiomeInfo.Builder builder,
+            Map<String, MobSpawnConfig> mobConfigs
+    ) {
+        for (Map.Entry<String, MobSpawnConfig> entry : mobConfigs.entrySet()) {
             String mobPath = entry.getKey();
             MobSpawnConfig config = entry.getValue();
 
@@ -73,8 +94,8 @@ public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
                     new MobSpawnSettings.SpawnerData(
                             entityType,
                             config.spawnWeight.get(),
-                            1,
-                            1
+                            config.minCount.get(),
+                            config.maxCount.get()
                     )
             );
         }
