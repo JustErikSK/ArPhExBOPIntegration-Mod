@@ -6,7 +6,6 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.withrage.arphexbopintegration.config.EndSpawnConfig;
 import net.withrage.arphexbopintegration.config.NetherSpawnConfig;
 import net.withrage.arphexbopintegration.config.OverworldSpawnConfig;
 import net.withrage.arphexbopintegration.world.ModBiomeModifiers;
@@ -33,12 +32,6 @@ public class ArphexBopIntegration {
                 ModConfig.Type.COMMON,
                 NetherSpawnConfig.SPEC,
                 "arphex_bop_integration-nether.toml"
-        );
-
-        ModLoadingContext.get().registerConfig(
-                ModConfig.Type.COMMON,
-                EndSpawnConfig.SPEC,
-                "arphex_bop_integration-end.toml"
         );
     }
 }
