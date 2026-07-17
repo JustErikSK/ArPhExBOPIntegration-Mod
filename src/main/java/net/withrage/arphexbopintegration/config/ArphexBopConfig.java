@@ -38,7 +38,7 @@ public class ArphexBopConfig {
                 " Min Count: Minimum group size.",
                 " Max Count: Maximum group size.",
                 "",
-                "I recommend using CTRL+F to find the mob you want as this config file is quite long.",
+                " I recommend using CTRL+F to find the mob you want as this config file is quite long.",
                 ""
         );
 
