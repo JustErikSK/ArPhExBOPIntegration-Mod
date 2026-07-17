@@ -28,9 +28,18 @@ public class ArphexBopConfig {
         builder.push("Mob Specific Spawns");
 
         builder.comment(
-                "You can use basically any modded world generation with this config, just add new lines with biomes from the mod you're using.",
-                "Has to look like this -> modId:biomeId -> so for example biomesoplenty:wasteland",
-                "You can easily find the modId and biomeId using the in-game /locate command"
+                " You can use basically any modded world generation with this config, just add new lines with biomes from the mod you're using.",
+                " Has to look like this -> modId:biomeId -> so for example biomesoplenty:wasteland",
+                " You can easily find the modId and biomeId using the in-game /locate command",
+                "",
+                " Enabled: Whether biome-specific spawning is enabled for this mob.",
+                " Allowed Biomes: Biome IDs where this mob may spawn. Biome IDs from other mods may also be used.",
+                " Spawn Weight: The mob's spawn weight. Higher values make the mob more common relative to other mobs.",
+                " Min Count: Minimum group size.",
+                " Max Count: Maximum group size.",
+                "",
+                "I recommend using CTRL+F to find the mob you want as this config file is quite long.",
+                ""
         );
 
         // Ant Arsonist
