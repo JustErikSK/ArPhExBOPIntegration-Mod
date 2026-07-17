@@ -61,11 +61,6 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-
-    runtimeOnly fg.deobf("curse.maven:arphex-967672:7466434")
-    runtimeOnly fg.deobf("curse.maven:geckolib-388172:7017796")
-    runtimeOnly fg.deobf("curse.maven:biomesoplenty-220318:4617259")
-    runtimeOnly fg.deobf("curse.maven:terrablender-563928:5008700")
 }
 
 tasks.named('processResources', ProcessResources).configure {
