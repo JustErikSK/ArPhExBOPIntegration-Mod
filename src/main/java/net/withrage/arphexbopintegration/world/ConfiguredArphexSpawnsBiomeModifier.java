@@ -11,7 +11,7 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.withrage.arphexbopintegration.ArphexBopIntegration;
-import net.withrage.arphexbopintegration.config.ArphexBopConfig;
+import net.withrage.arphexbopintegration.config.OverworldSpawnConfig;
 import net.withrage.arphexbopintegration.config.MobSpawnConfig;
 
 import java.util.List;
@@ -30,7 +30,7 @@ public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
             return;
         }
 
-        if (!ArphexBopConfig.ENABLE_INTEGRATION.get()) {
+        if (!OverworldSpawnConfig.ENABLE_INTEGRATION.get()) {
             return;
         }
 
@@ -42,7 +42,7 @@ public class ConfiguredArphexSpawnsBiomeModifier implements BiomeModifier {
             return;
         }
 
-        for (var entry : ArphexBopConfig.MOB_CONFIGS.entrySet()) {
+        for (var entry : OverworldSpawnConfig.MOB_CONFIGS.entrySet()) {
             String mobPath = entry.getKey();
             MobSpawnConfig config = entry.getValue();
 

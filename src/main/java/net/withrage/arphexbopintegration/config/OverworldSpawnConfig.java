@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ArphexBopConfig {
+public class OverworldSpawnConfig {
     public static final ForgeConfigSpec SPEC;
 
     public static final ForgeConfigSpec.BooleanValue ENABLE_INTEGRATION;
@@ -20,7 +20,7 @@ public class ArphexBopConfig {
         builder.push("General");
 
         ENABLE_INTEGRATION = builder
-                .comment("Enables all configured ArPhEx modded biome spawns.")
+                .comment("Enables all configured ArPhEx modded biome spawns for the Overworld.")
                 .define("Enable Integration", true);
 
         builder.pop();
@@ -28,6 +28,8 @@ public class ArphexBopConfig {
         builder.push("Mob Specific Spawns");
 
         builder.comment(
+                "THE OVERWORLD",
+                "",
                 " You can use basically any modded world generation with this config, just add new lines with biomes from the mod you're using.",
                 " Has to look like this -> modId:biomeId -> so for example biomesoplenty:wasteland",
                 " You can easily find the modId and biomeId using the in-game /locate command",
@@ -54,7 +56,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
                 ),
@@ -68,10 +69,8 @@ public class ArphexBopConfig {
                 builder,
                 "beetle_bulwark",
                 List.of(
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:glowing_grotto",
                         "biomesoplenty:fungal_jungle",
-                        "biomesoplenty:withered_abyss",
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:fir_clearing",
                         "biomesoplenty:snowblossom_grove",
@@ -88,10 +87,8 @@ public class ArphexBopConfig {
                 builder,
                 "beetle_tick_mite",
                 List.of(
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:glowing_grotto",
                         "biomesoplenty:fungal_jungle",
-                        "biomesoplenty:withered_abyss",
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:fir_clearing",
                         "biomesoplenty:snowblossom_grove",
@@ -126,7 +123,6 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field",
                         "biomesoplenty:seasonal_forest",
@@ -161,7 +157,6 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:fungal_jungle",
                         "biomesoplenty:glowing_grotto",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:wetland"
                 ),
                 8,
@@ -178,9 +173,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field",
                         "biomesoplenty:seasonal_forest",
-                        "biomesoplenty:visceral_heap",
-                        "biomesoplenty:erupting_inferno",
-                        "biomesoplenty:withered_abyss",
                         "biomesoplenty:volcanic_plains",
                         "biomesoplenty:ominous_woods"
                 ),
@@ -199,10 +191,8 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:volcano",
-                        "biomesoplenty:volcanic_plains",
-                        "biomesoplenty:crystalline_chasm"
+                        "biomesoplenty:volcanic_plains"
                 ),
                 16,
                 1,
@@ -248,10 +238,8 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:volcano",
                         "biomesoplenty:volcanic_plains",
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -271,7 +259,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -291,7 +278,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:cold_desert",
                         "biomesoplenty:lush_desert"
@@ -311,7 +297,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -342,10 +327,8 @@ public class ArphexBopConfig {
                 builder,
                 "long_legs",
                 List.of(
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:glowing_grotto",
                         "biomesoplenty:fungal_jungle",
-                        "biomesoplenty:withered_abyss",
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:fir_clearing",
                         "biomesoplenty:snowblossom_grove",
@@ -366,8 +349,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field",
                         "biomesoplenty:seasonal_forest",
-                        "biomesoplenty:visceral_heap",
-                        "biomesoplenty:erupting_inferno",
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:old_growth_dead_forest",
                         "biomesoplenty:spider_nest"
@@ -382,7 +363,6 @@ public class ArphexBopConfig {
                 builder,
                 "maggot_larvae",
                 List.of(
-                        "biomesoplenty:withered_abyss",
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:rocky_rainforest",
@@ -404,8 +384,7 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:rainforest",
                         "biomesoplenty:rocky_rainforest",
-                        "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth"
+                        "biomesoplenty:tropics"
                 ),
                 8,
                 1,
@@ -422,7 +401,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field",
                         "biomesoplenty:seasonal_forest"
@@ -442,10 +420,8 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:volcano",
-                        "biomesoplenty:volcanic_plains",
-                        "biomesoplenty:crystalline_chasm"
+                        "biomesoplenty:volcanic_plains"
                 ),
                 32,
                 1,
@@ -459,10 +435,8 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:volcano",
                         "biomesoplenty:volcanic_plains",
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -477,10 +451,8 @@ public class ArphexBopConfig {
                 builder,
                 "roach_riverspawn",
                 List.of(
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:glowing_grotto",
                         "biomesoplenty:fungal_jungle",
-                        "biomesoplenty:withered_abyss",
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:fir_clearing",
                         "biomesoplenty:snowblossom_grove",
@@ -502,7 +474,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:volcano",
                         "biomesoplenty:volcanic_plains",
-                        "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:wasteland",
                         "biomesoplenty:wasteland_steppe",
                         "biomesoplenty:dune_beach"
@@ -523,7 +494,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:volcano",
                         "biomesoplenty:volcanic_plains"
                 ),
@@ -575,7 +545,6 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:spider_nest",
                         "biomesoplenty:ominous_woods",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:rainforest"
                 ),
                 10,
@@ -593,7 +562,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -613,10 +581,7 @@ public class ArphexBopConfig {
                         "biomesoplenty:grassland",
                         "biomesoplenty:highland",
                         "biomesoplenty:rocky_shrubland",
-                        "biomesoplenty:withered_abyss",
-                        "biomesoplenty:ominous_woods",
-                        "biomesoplenty:visceral_heap",
-                        "biomesoplenty:erupting_inferno"
+                        "biomesoplenty:ominous_woods"
                 ),
                 8,
                 1,
@@ -647,7 +612,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:rainforest",
                         "biomesoplenty:rocky_rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:lush_savanna",
                         "biomesoplenty:scrubland",
                         "biomesoplenty:glowing_grotto",
@@ -698,10 +662,8 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:volcano",
-                        "biomesoplenty:volcanic_plains",
-                        "biomesoplenty:crystalline_chasm"
+                        "biomesoplenty:volcanic_plains"
                 ),
                 32,
                 2,
@@ -718,7 +680,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -735,8 +696,7 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:spider_nest",
                         "biomesoplenty:ominous_woods",
-                        "biomesoplenty:glowing_grotto",
-                        "biomesoplenty:undergrowth"
+                        "biomesoplenty:glowing_grotto"
                 ),
                 12,
                 1,
@@ -750,7 +710,6 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field",
                         "biomesoplenty:seasonal_forest",
@@ -772,7 +731,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:rainforest",
                         "biomesoplenty:rocky_rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:lush_savanna",
                         "biomesoplenty:scrubland",
                         "biomesoplenty:glowing_grotto",
@@ -809,7 +767,6 @@ public class ArphexBopConfig {
                         "biomesoplenty:dryland",
                         "biomesoplenty:rainforest",
                         "biomesoplenty:tropics",
-                        "biomesoplenty:undergrowth",
                         "biomesoplenty:dune_beach",
                         "biomesoplenty:woodland",
                         "biomesoplenty:forested_field"
@@ -846,8 +803,7 @@ public class ArphexBopConfig {
                 List.of(
                         "biomesoplenty:ominous_woods",
                         "biomesoplenty:old_growth_dead_forest",
-                        "biomesoplenty:spider_nest",
-                        "biomesoplenty:withered_abyss"
+                        "biomesoplenty:spider_nest"
                 ),
                 32,
                 1,
