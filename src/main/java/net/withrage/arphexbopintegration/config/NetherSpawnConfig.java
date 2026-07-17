@@ -50,7 +50,7 @@ public class NetherSpawnConfig {
                 List.of(
                         "biomesoplenty:undergrowth"
                 ),
-                2,
+                4,
                 1,
                 2
         );
@@ -62,7 +62,7 @@ public class NetherSpawnConfig {
                 List.of(
                         "biomesoplenty:undergrowth"
                 ),
-                2,
+                4,
                 1,
                 1
         );
@@ -76,7 +76,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:erupting_inferno",
                         "biomesoplenty:withered_abyss"
                 ),
-                8,
+                16,
                 1,
                 1
         );
@@ -89,7 +89,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                4,
+                8,
                 1,
                 1
         );
@@ -102,7 +102,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                12,
+                24,
                 1,
                 2
         );
@@ -115,7 +115,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:withered_abyss"
                 ),
-                12,
+                24,
                 1,
                 2
         );
@@ -127,7 +127,7 @@ public class NetherSpawnConfig {
                 List.of(
                         "biomesoplenty:withered_abyss"
                 ),
-                4,
+                8,
                 1,
                 2
         );
@@ -139,7 +139,7 @@ public class NetherSpawnConfig {
                 List.of(
                         "biomesoplenty:undergrowth"
                 ),
-                8,
+                16,
                 1,
                 1
         );
@@ -152,7 +152,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                8,
+                16,
                 1,
                 1
         );
@@ -165,7 +165,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                2,
+                4,
                 1,
                 2
         );
@@ -178,7 +178,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:crystalline_chasm",
                         "biomesoplenty:withered_abyss"
                 ),
-                4,
+                8,
                 1,
                 2
         );
@@ -190,7 +190,7 @@ public class NetherSpawnConfig {
                 List.of(
                         "biomesoplenty:crystalline_chasm"
                 ),
-                4,
+                8,
                 1,
                 1
         );
@@ -202,7 +202,7 @@ public class NetherSpawnConfig {
                 List.of(
                         "biomesoplenty:undergrowth"
                 ),
-                8,
+                16,
                 1,
                 4
         );
@@ -216,7 +216,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:visceral_heap",
                         "biomesoplenty:erupting_inferno"
                 ),
-                2,
+                4,
                 1,
                 1
         );
@@ -229,7 +229,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                8,
+                16,
                 1,
                 2
         );
