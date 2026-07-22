@@ -64,7 +64,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:erupting_inferno",
                         "biomesoplenty:withered_abyss"
                 ),
-                1,
+                6,
                 1,
                 1
         );
@@ -77,7 +77,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                4,
+                6,
                 1,
                 1
         );
