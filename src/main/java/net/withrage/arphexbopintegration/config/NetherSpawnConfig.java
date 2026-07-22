@@ -55,18 +55,6 @@ public class NetherSpawnConfig {
                 2
         );
 
-        // Centipede Evictor
-        addMob(
-                builder,
-                "centipede_evictor",
-                List.of(
-                        "biomesoplenty:undergrowth"
-                ),
-                4,
-                1,
-                1
-        );
-
         // Centipede Evictor Larvae
         addMob(
                 builder,
@@ -76,7 +64,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:erupting_inferno",
                         "biomesoplenty:withered_abyss"
                 ),
-                16,
+                1,
                 1,
                 1
         );
@@ -89,7 +77,7 @@ public class NetherSpawnConfig {
                         "biomesoplenty:undergrowth",
                         "biomesoplenty:crystalline_chasm"
                 ),
-                8,
+                4,
                 1,
                 1
         );
